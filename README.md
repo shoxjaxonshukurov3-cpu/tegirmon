@@ -1,1 +1,1 @@
-# tegirmon
+# qalamtarosh
