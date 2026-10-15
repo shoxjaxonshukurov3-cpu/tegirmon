@@ -1,12 +1,139 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tegirmon</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Qalamtarosh</title>
+<meta name="description" content="Qalamtarosh: xizmatlar va saytlar uchun kirish sahifasi.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✏️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F7F7F4;
+    --ink: #23262B;
+    --muted: #5E636B;
+    --line: #D9D9D2;
+    --pencil: #F5C518;
+    --wood: #E8C9A0;
+    --lead: #23262B;
+    --accent: #B3261E;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #17181B;
+      --ink: #F1F1EC;
+      --muted: #A3A8B0;
+      --line: #34373D;
+      --accent: #FF8A80;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #17181B;
+    --ink: #F1F1EC;
+    --muted: #A3A8B0;
+    --line: #34373D;
+    --accent: #FF8A80;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { height: 100%; }
+  body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+  header { padding: 1.5rem 0; font-weight: 800; font-size: 1.125rem; letter-spacing: -0.01em; }
+
+  .pencil { display: block; width: 100%; height: auto; margin: 1.5rem 0 0; overflow: visible; }
+  .pencil-body { animation: slide 0.9s cubic-bezier(.2,.8,.2,1) both; }
+  @keyframes slide { from { transform: translateX(-60px); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .pencil-body { animation: none; } }
+
+  h1 {
+    font-size: clamp(2.25rem, 7vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin: 2.5rem 0 1rem;
+    max-width: 14ch;
+  }
+  .lead { color: var(--muted); max-width: 46ch; margin: 0 0 3rem; }
+
+  h2 { font-size: 1rem; font-weight: 600; color: var(--muted); margin: 0 0 0.5rem; }
+  ul { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+  li { border-top: 1px solid var(--line); }
+  .site {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.25rem 1rem;
+    align-items: baseline;
+    padding: 1.25rem 0;
+    color: inherit;
+    text-decoration: none;
+  }
+  .site .name { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .site .host { color: var(--muted); font-size: 0.9375rem; grid-column: 1; }
+  .site .go { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-weight: 600; border-bottom: 2px solid var(--pencil); padding-bottom: 1px; }
+  a.site:hover .name { text-decoration: underline; text-decoration-color: var(--pencil); text-decoration-thickness: 4px; text-underline-offset: 4px; }
+  a.site:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .soon { opacity: 0.55; }
+  .soon .go { border-bottom-color: var(--line); font-weight: 400; }
+
+  footer { padding: 3rem 0 2rem; color: var(--muted); font-size: 0.9375rem; }
+</style>
 </head>
 <body>
-  <h1>Tegirmon</h1>
-  <p>Iqtisodiyot va siyosat tahlillari. Tez orada.</p>
+<div class="wrap">
+  <header>qalamtarosh</header>
+
+  <svg class="pencil" viewBox="0 0 900 120" role="img" aria-label="Charxlangan qalam">
+    <g class="pencil-body">
+      <rect x="0" y="22" width="86" height="76" rx="12" fill="#E8838F"/>
+      <rect x="86" y="22" width="22" height="76" fill="#C9CCD1"/>
+      <rect x="108" y="22" width="600" height="76" fill="var(--pencil)"/>
+      <rect x="108" y="22" width="600" height="10" fill="#fff" opacity=".28"/>
+      <rect x="108" y="88" width="600" height="10" fill="#000" opacity=".12"/>
+      <polygon points="708,22 820,60 708,98" fill="var(--wood)"/>
+      <polygon points="790,50 820,60 790,70" fill="var(--lead)"/>
+      <text x="150" y="73" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="800" font-size="40" fill="#23262B" letter-spacing="-1">qalamtarosh.uz</text>
+    </g>
+  </svg>
+
+  <main>
+    <h1>Fikrni charxlaymiz.</h1>
+    <p class="lead">Qalamtarosh ostidagi saytlar va xizmatlar shu yerda yig'ilgan. Keraklisini tanlang.</p>
+
+    <h2>Xizmatlar</h2>
+    <ul>
+      <li>
+        <a class="site" href="https://hemis.qalamtarosh.uz">
+          <span class="name">HEMIS</span>
+          <span class="host">hemis.qalamtarosh.uz</span>
+          <span class="go">Ochish</span>
+        </a>
+      </li>
+      <!-- Yangi sayt qo'shish uchun yuqoridagi <li> blokini nusxalab, nom va manzilni almashtiring -->
+      <li>
+        <div class="site soon" aria-disabled="true">
+          <span class="name">Yangi xizmat</span>
+          <span class="host">Tez orada</span>
+          <span class="go">Kutilmoqda</span>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <footer>qalamtarosh.uz</footer>
+</div>
 </body>
 </html>
